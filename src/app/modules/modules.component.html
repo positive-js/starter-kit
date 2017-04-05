@@ -1,0 +1,8 @@
+<md-sidenav-container fullscreen>
+    <pt-sidenav [open]="showSidenav$">
+    </pt-sidenav>
+    <pt-header (openMenu)="openSidenav()">
+        Marvel Interactive
+    </pt-header>
+    <router-outlet></router-outlet>
+</md-sidenav-container>
