@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/angular/angular/tree/master.svg?style=shield)](https://circleci.com/gh/angular/angular/tree/master)
+[![CircleCI](https://circleci.com/gh/positive-js/angular-starter/tree/master.svg?style=shield)](https://circleci.com/gh/positive-js/angular-starter/tree/master)
 [![dependency status][david-img]][david-url]
 
 # Angular Starter [![The MIT License][license-img]][license-url] 
