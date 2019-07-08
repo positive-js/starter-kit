@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc/apps/mc-web"
+    },
+    "exclude": [
+        "test.ts",
+        "**/*.spec.ts"
+    ],
+    "include": [
+        "**/*.ts",
+        "../../libs/feature/auth/src/index.ts"
+    ]
+}

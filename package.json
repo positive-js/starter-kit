@@ -1,163 +1,83 @@
 {
-    "name": "@ptsecurity/ng-starter",
-    "version": "0.0.3",
-    "description": "Angular starter application",
-    "author": "Positive Technologies",
-    "homepage": "https://www.ptsecurity.com",
-    "license": "MIT",
-    "keywords": [
-      "angular",
-      "angular2",
-      "webpack2",
-      "ngrx",
-      "ngrx@effects",
-      "rxjs"
-    ],
-    "contributors": [
-      ""
-    ],
+    "name": "positive-starter",
+    "version": "1.0.0",
+    "scripts": {
+        "ng": "ng",
+        "start": "ng serve",
+        "build": "ng build",
+        "build:prod": "ng build mc-web --prod",
+        "test": "ng test",
+        "lint": "ng lint",
+        "lint:styles": "stylelint \"**/*.scss\"",
+        "e2e": "ng e2e",
+        "preinstall": "node ./tools/npm/check-npm.js",
+        "dep-graph": "rimraf dist/mxdeps.json && ./node_modules/.bin/mx dep-graph"
+    },
+    "private": true,
+    "husky": {
+        "hooks": {
+            "commit-msg": "commitlint --config ./tools/commitlint.config.js -E HUSKY_GIT_PARAMS"
+        }
+    },
     "dependencies": {
-        "@angular/common": "4.0.2",
-        "@angular/compiler": "4.0.2",
-        "@angular/core": "4.0.2",
-        "@angular/forms": "4.0.2",
-        "@angular/http": "4.0.2",
-        "@angular/platform-browser": "4.0.2",
-        "@angular/platform-browser-dynamic": "4.0.2",
-        "@angular/platform-server": "4.0.2",
-        "@angular/router": "4.0.2",
-
-        "@angular/material": "2.0.0-beta.3",
-
-        "@ngrx/core": "1.2.0",
-        "@ngrx/effects": "2.0.2",
-        "@ngrx/store": "2.2.1",
-        "@ngrx/store-devtools": "3.2.4",
-
-        "zone.js": "0.8.5",
-        "rxjs": "5.3.0",
-
-        "reselect": "3.0.0",
-        "immutable": "3.8.1",
-
-        "core-js": "2.4.1",
-        "ie-shim": "0.1.0",
-
-        "ts-md5": "1.2.0"
+        "@angular/animations": "~8.0.0",
+        "@angular/cdk": "~8.0.2",
+        "@angular/common": "~8.0.0",
+        "@angular/compiler": "~8.0.0",
+        "@angular/core": "~8.0.0",
+        "@angular/forms": "~8.0.0",
+        "@angular/platform-browser": "~8.0.0",
+        "@angular/platform-browser-dynamic": "~8.0.0",
+        "@angular/router": "~8.0.0",
+        "@ngrx/effects": "~8.0.0",
+        "@ngrx/entity": "8.0.0",
+        "@ngrx/router-store": "~8.0.0",
+        "@ngrx/store": "~8.0.0",
+        "@ptsecurity/cdk": "^8.0.0-beta.4",
+        "@ptsecurity/mosaic": "^8.0.0-beta.4",
+        "@ptsecurity/mosaic-icons": "2.10.0",
+        "@ptsecurity/mosaic-moment-adapter": "^8.0.0-beta.4",
+        "messageformat": "^2.2.1",
+        "moment": "^2.24.0",
+        "rxjs": "~6.5.2",
+        "tslib": "^1.9.0",
+        "zone.js": "~0.9.1"
     },
     "devDependencies": {
-        "express": "4.15.2",
-
-        "@types/jasmine": "2.5.47",
-        "@types/node": "7.0.12",
-        "@types/source-map": "0.5.0",
-        "@types/uglify-js": "2.6.28",
-        "@types/webpack": "2.2.14",
-
-        "jasmine-core": "2.5.2",
-        "phantomjs-polyfill": "0.0.2",
-        "phantomjs-prebuilt": "2.1.14",
-
-        "karma": "1.6.0",
-        "karma-coverage": "1.1.1",
-        "karma-jasmine": "1.1.0",
-        "karma-mocha-reporter": "2.2.3",
-        "karma-remap-coverage": "0.1.4",
-        "karma-sourcemap-loader": "0.3.7",
-        "karma-phantomjs-launcher": "1.0.4",
-        "karma-webpack": "2.0.3",
-
-        "codelyzer": "2.1.1",
-        "node-sass": "4.5.2",
-        "autoprefixer": "6.7.7",
-        "postcss": "5.2.16",
-        "precss": "1.4.0",
-        "postcss-smart-import": "0.6.11",
-        "postcss-flexbugs-fixes": "2.1.1",
-        "sass-lint": "1.10.2",
-        "rimraf": "2.6.1",
-
-        "es6-promise": "4.1.0",
-        "es6-shim": "0.35.3",
-        "es7-reflect-metadata": "1.6.0",
-
-        "copy-webpack-plugin": "4.0.1",
-        "compression-webpack-plugin": "0.4.0",
-        "extract-text-webpack-plugin": "2.1.0",
-        "script-ext-html-webpack-plugin": "1.7.1",
-        "html-webpack-plugin": "2.28.0",
-        "add-asset-html-webpack-plugin": "1.0.2",
-
-        "angular-router-loader": "0.6.0",
-        "angular2-template-loader": "0.6.2",
-        "awesome-typescript-loader": "3.1.2",
-        "istanbul-instrumenter-loader": "2.0.0",
-        "file-loader": "0.11.1",
-        "imports-loader": "0.7.1",
-        "json-loader": "0.5.4",
-        "raw-loader": "0.5.1",
-        "postcss-loader": "1.3.3",
-        "css-loader": "0.28.0",
-        "sass-loader": "6.0.3",
-        "style-loader": "0.16.1",
-        "source-map-loader": "0.2.1",
-        "url-loader": "0.5.8",
-        "tslint-loader": "3.5.2",
-        "to-string-loader": "1.1.5",
-
-        "ts-helpers": "1.1.2",
-        "ts-node": "3.0.2",
-        "tslint": "4.5.1",
-        "typedoc": "0.5.10",
-        "typescript": "2.2.2",
-
-        "webpack": "2.3.3",
-        "webpack-dev-server": "2.4.2",
-        "webpack-md5-hash": "0.0.5",
-        "webpack-merge": "4.1.0",
-        "webpack-dashboard": "0.3.0"
-    },
-    "scripts": {
-        "test": "karma start",
-
-        "clean": "npm cache clean && npm run rimraf -- node_modules doc coverage dist",
-        "clean:dist": "npm run rimraf -- dist",
-
-        "lint": "tslint \"src/**/*.ts\"",
-
-        "build": "npm run build:dev",
-        "build:dev": "webpack --config config/webpack.dev.js",
-        "build:prod": "npm run clean:dist && webpack --config config/webpack.prod.js",
-
-        "build:dll": "webpack --config config/webpack.dll.js --progress",
-
-        "server": "npm run server:dev",
-        "server:dev": "webpack-dev-server --config config/webpack.dev.js",
-        "server:dev:dash": "webpack-dashboard -- webpack-dev-server --config config/webpack.dev.js",
-        "server:dev:hmr": "npm run server:dev -- --hot",
-
-        "server:prod": "node server.js",
-
-        "start": "npm run server",
-
-        "docs": "typedoc -- --options typedoc.json --exclude '**/*.spec.ts' ./src/",
-        "docs-pages": "wintersmith build -C docs",
-
-        "heroku:run": "npm run build:dll && npm run build:prod && npm run server:prod",
-        "heroku:deploy": "git push origin master && git push heroku master",
-
-        "rimraf": "rimraf",
-        "webpack": "webpack"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/positive-js/angular-starter.git"
-    },
-    "bugs": {
-        "url": "https://github.com/positive-js/angular-starter/issues"
-    },
-    "engines": {
-        "node": ">= 6.10.2 <7",
-        "npm": ">=3.10.10 <4"
+        "@angular-devkit/build-angular": "~0.800.0",
+        "@angular/cli": "~8.0.2",
+        "@angular/compiler-cli": "~8.0.0",
+        "@angular/language-service": "~8.0.0",
+        "@commitlint/cli": "^8.0.0",
+        "@commitlint/config-conventional": "^8.0.0",
+        "@ngrx/store-devtools": "~8.0.0",
+        "@ptsecurity/commitlint-config": "^0.2.1",
+        "@ptsecurity/tslint-config": "~0.12.0",
+        "@types/jasmine": "~3.3.8",
+        "@types/jasminewd2": "~2.0.3",
+        "@types/node": "~8.9.4",
+        "angular2-template-loader": "^0.6.2",
+        "husky": "^2.4.0",
+        "jasmine-core": "~3.4.0",
+        "jasmine-marbles": "^0.5.0",
+        "jasmine-spec-reporter": "~4.2.1",
+        "karma": "~4.1.0",
+        "karma-chrome-launcher": "~2.2.0",
+        "karma-coverage": "^1.1.2",
+        "karma-coverage-istanbul-reporter": "~2.0.1",
+        "karma-jasmine": "~2.0.1",
+        "karma-jasmine-html-reporter": "^1.4.0",
+        "ngrx-store-freeze": "^0.2.4",
+        "node-sass": "^4.11.0",
+        "node-sass-tilde-importer": "^1.0.2",
+        "protractor": "~5.4.0",
+        "rimraf": "^2.6.3",
+        "stylelint": "^9.10.1",
+        "stylelint-scss": "^3.5.3",
+        "ts-node": "~7.0.0",
+        "tsconfig-paths": "^3.8.0",
+        "tslint": "~5.15.0",
+        "typescript": "~3.4.3",
+        "wallaby-webpack": "^3.9.15"
     }
 }

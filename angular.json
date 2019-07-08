@@ -1,0 +1,110 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "mc-web": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "apps/mc-web/",
+            "sourceRoot": "apps/mc-web/src",
+            "prefix": "mc-web",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/mc-web",
+                        "index": "apps/mc-web/src/index.html",
+                        "main": "apps/mc-web/src/main.ts",
+                        "polyfills": "apps/mc-web/src/polyfills.ts",
+                        "tsConfig": "apps/mc-web/tsconfig.app.json",
+                        "aot": false,
+                        "assets": [
+                            "apps/mc-web/src/favicon.ico",
+                            {
+                                "glob": "**/+(common|errors).json",
+                                "input": "./libs/i18n-resources",
+                                "output": "./assets/i18n"
+                            }
+                        ],
+                        "styles": [
+                            "apps/mc-web/src/styles.scss"
+                        ],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/mc-web/src/environments/environment.ts",
+                                    "with": "apps/mc-web/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "mc-web:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "mc-web:build:production"
+                        }
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "apps/mc-web/src/test.ts",
+                        "polyfills": "apps/mc-web/src/polyfills.ts",
+                        "tsConfig": "apps/mc-web/tsconfig.spec.json",
+                        "karmaConfig": "apps/mc-web/karma.conf.js",
+                        "assets": [
+                            "apps/mc-web/src/favicon.ico"
+                        ],
+                        "styles": [
+                            "apps/mc-web/src/styles.scss"
+                        ],
+                        "scripts": []
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/mc-web/tsconfig.app.json",
+                            "apps/mc-web/tsconfig.spec.json",
+                            "apps/mc-web/e2e/tsconfig.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "mc-web"
+}

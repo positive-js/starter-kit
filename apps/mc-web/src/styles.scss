@@ -1,0 +1,16 @@
+@import '~@ptsecurity/mosaic/visual';
+@import '~@ptsecurity/mosaic-icons/dist/styles/mc-icons.css';
+
+@import 'styles/font';
+
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

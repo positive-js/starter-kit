@@ -1,0 +1,46 @@
+$roboto-font-path: './assets/fonts/roboto';
+
+@mixin roboto-font($variant, $type, $weight, $style) {
+    $font-full-path: '#{$roboto-font-path}/#{$variant}';
+
+    @font-face {
+        font-family: '#{$variant}';
+        src:
+            local('#{$variant} #{$type}'),
+            local('#{$variant}-#{$type}'),
+            url('#{$font-full-path}-#{$type}.woff') format('woff');
+        font-weight: $weight;
+        font-style: $style;
+    }
+
+    @font-face {
+        font-family: '#{$variant}-#{$type}';
+        src:
+            local('#{$variant} #{$type}'),
+            local('#{$variant}-#{$type}'),
+            url('#{$font-full-path}-#{$type}.woff') format('woff');
+    }
+}
+
+@include roboto-font('Roboto','Black', 900, normal);
+@include roboto-font('Roboto','BlackItalic', 900, italic);
+@include roboto-font('Roboto','Regular', 400, normal);
+@include roboto-font('Roboto','RegularItalic', 400, italic);
+@include roboto-font('Roboto','Thin', 100, normal);
+@include roboto-font('Roboto','ThinItalic', 100, italic);
+@include roboto-font('Roboto','Bold', 700, normal);
+@include roboto-font('Roboto','BoldItalic', 700, italic);
+@include roboto-font('Roboto','Light', 300, normal);
+@include roboto-font('Roboto','LightItalic', 300, italic);
+@include roboto-font('Roboto','Medium', 500, normal);
+@include roboto-font('Roboto','MediumItalic', 500, italic);
+@include roboto-font('RobotoMono','Bold', 700, normal);
+@include roboto-font('RobotoMono','BoldItalic', 700, italic);
+@include roboto-font('RobotoMono','Italic', 400, italic);
+@include roboto-font('RobotoMono','Light', 300, normal);
+@include roboto-font('RobotoMono','LightItalic', 300, italic);
+@include roboto-font('RobotoMono','Medium', 500, normal);
+@include roboto-font('RobotoMono','MediumItalic', 500, italic);
+@include roboto-font('RobotoMono','Regular', 400, normal);
+@include roboto-font('RobotoMono','Thin', 100, normal);
+@include roboto-font('RobotoMono','ThinItalic', 100, italic);
