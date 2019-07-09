@@ -1,0 +1,66 @@
+@import '~@ptsecurity/mosaic/theming';
+
+// Custom typography
+$typography: mc-typography-config(
+    $font-family: 'Muli, Helvetica Neue, Arial, sans-serif',
+    $display-1: mc-typography-level(20px, 32px, 600),
+    $body-caps: mc-typography-level(14px, 24px, 600),
+    $caption: mc-typography-level(14px, 14px, 600),
+    $small-text: mc-typography-level(16px, 1.125, 400)
+);
+
+// Setup the typography
+@include mosaic-typography($typography);
+
+
+// -----------------------------------------------------------------------------------------------------
+// @ Component theming
+// -----------------------------------------------------------------------------------------------------
+
+// Import app and page component themes here to enable theming for them
+// @import 'path/to/component/component-name.theme';
+
+@mixin app-components-theme($theme) {
+
+    // @include component-name($theme);
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Define the default theme
+// -----------------------------------------------------------------------------------------------------
+$primary: mc-palette($mc-blue, 400, 500, 600);
+$second: mc-palette($mc-grey, 100, 300, 400);
+$error: mc-palette($mc-red, 60, 400, 500);
+
+$info: mc-palette($mc-blue, 60, 200, 400);
+$success: mc-palette($mc-green, 60, 200, 400);
+$warning: mc-palette($mc-yellow, 60, 200, 400);
+
+$theme: mc-light-theme($primary, $second, $error, $info, $success, $warning);
+
+body.theme-default {
+
+    @include mosaic-theme($theme);
+
+    @include app-components-theme($theme);
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Define a dark theme
+// -----------------------------------------------------------------------------------------------------
+$dark-primary: mc-palette($mc-blue, 300, 400, 500);
+$dark-second: mc-palette($mc-grey, 200, 400, 700);
+$dark-error: mc-palette($mc-red, 200, 400, 700);
+
+$dark-info: mc-palette($mc-blue, 200, 400, 700);
+$dark-success: mc-palette($mc-green, 200, 400, 700);
+$dark-warning: mc-palette($mc-yellow, 200, 400, 700);
+
+$dark-theme: mc-dark-theme($dark-primary, $dark-second, $dark-error, $dark-info, $dark-success, $dark-warning);
+
+body.theme-dark {
+
+    @include mosaic-theme($dark-theme);
+
+    @include app-components-theme($dark-theme);
+}

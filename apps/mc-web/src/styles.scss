@@ -3,14 +3,4 @@
 
 @import 'styles/font';
 
-
-html, body {
-  height: 100%;
-  margin: 0;
-}
-
-app-root {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+@import 'app/app.theme';
