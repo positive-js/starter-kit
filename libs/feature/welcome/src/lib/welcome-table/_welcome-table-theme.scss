@@ -1,7 +1,7 @@
 @mixin welcome-table-theme($theme) {
 
     $foreground: map-get($theme, foreground);
-    $warning-color: map-get($theme, warning);
+    $second: map-get($theme, second);
 
     .welcome-table {
         td, th {
@@ -9,7 +9,7 @@
         }
         th {
             color: mc-color($foreground, text);
-            background-color: mc-color($warning-color);
+            background-color: mc-color($second, 200);
         }
     }
 

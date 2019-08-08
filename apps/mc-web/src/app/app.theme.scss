@@ -27,6 +27,8 @@ $typography: mc-typography-config(
 }
 
 @include mosaic-visual();
+@include cdk-a11y();
+@include cdk-overlay();
 
 // -----------------------------------------------------------------------------------------------------
 // @ Define the default theme
@@ -92,8 +94,43 @@ $dark-theme: mc-dark-theme($dark-primary, $dark-second, $dark-error, $dark-info,
 // -----------------------------------------------------------------------------------------------------
 // @ Define a green theme
 // -----------------------------------------------------------------------------------------------------
+
+
+$mc-orange: (
+    40: #fdfaf3,
+    60: #fcf5e8,
+    100: #f8ebd1,
+    200: #f0d49b,
+    300: #e7bd68,
+    400: #dfa739,
+    500: #d6930d,
+    560: #bb800a,
+    600: #aa7408,
+    700: #7d5504,
+    800: #503602,
+    A40: rgba(0, 0, 0, 0.04),
+    A60: rgba(0, 0, 0, 0.06),
+    A100: rgba(0, 0, 0, 0.1),
+    A200: rgba(0, 0, 0, 0.2),
+    A300: rgba(0, 0, 0, 0.3),
+    A500: rgba(0, 0, 0, 0.5),
+    contrast: (
+        40: $dark-text-default,
+        60: $dark-text-default,
+        100: $dark-text-default,
+        200: $dark-text-default,
+        300: $dark-text-default,
+        400: white,
+        500: white,
+        560: white,
+        600: white,
+        700: white,
+        800: white,
+    )
+);
+
 $green-primary: mc-palette($mc-green, 800, 500, 200);
-$green-second: mc-palette($mc-grey, 200, 400, 700);
+$green-second: mc-palette($mc-orange, 200, 400, 700);
 $green-error: mc-palette($mc-green, 200, 400, 700);
 
 $green-info: mc-palette($mc-green, 500, 200, 700);
