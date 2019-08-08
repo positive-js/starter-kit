@@ -104,6 +104,25 @@
                     }
                 }
             }
+        },
+        "welcome": {
+            "root": "libs/feature/welcome",
+            "sourceRoot": "libs/feature/welcome/src",
+            "projectType": "library",
+            "prefix": "mc-web",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/feature/welcome/tsconfig.lib.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
         }
     },
     "defaultProject": "mc-web"
