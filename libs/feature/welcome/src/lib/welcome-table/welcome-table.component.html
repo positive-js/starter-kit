@@ -1,0 +1,14 @@
+<table class="welcome-table">
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>Item</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let item of items; let i = index">
+        <td>{{i}}</td>
+        <td>{{item}}</td>
+    </tr>
+    </tbody>
+</table>

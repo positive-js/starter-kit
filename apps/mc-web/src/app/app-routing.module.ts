@@ -6,8 +6,12 @@ const routes: Routes = [
     {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'auth'
-    }
+        redirectTo: 'welcome'
+    },
+    {
+        path: 'welcome',
+        loadChildren: () => import('@libs/feature/welcome').then(m => m.WelcomeModule)
+    },
 ];
 
 

@@ -1,0 +1,16 @@
+@mixin welcome-table-theme($theme) {
+
+    $foreground: map-get($theme, foreground);
+    $warning-color: map-get($theme, warning);
+
+    .welcome-table {
+        td, th {
+            border: 1px solid mc-color($foreground, text);
+        }
+        th {
+            color: mc-color($foreground, text);
+            background-color: mc-color($warning-color);
+        }
+    }
+
+}

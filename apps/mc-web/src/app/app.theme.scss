@@ -20,10 +20,13 @@ $typography: mc-typography-config(
 // Import app and page component themes here to enable theming for them
 // @import 'path/to/component/component-name.theme';
 
-@mixin app-components-theme($theme) {
+@import './../../../../libs/feature/welcome/src/lib/welcome-table/_welcome-table-theme';
 
-    // @include component-name($theme);
+@mixin app-components-theme($theme) {
+     @include welcome-table-theme($theme);
 }
+
+@include mosaic-visual();
 
 // -----------------------------------------------------------------------------------------------------
 // @ Define the default theme
@@ -38,10 +41,26 @@ $warning: mc-palette($mc-yellow, 60, 200, 400);
 
 $theme: mc-light-theme($primary, $second, $error, $info, $success, $warning);
 
-body.theme-default {
+body,
+.theme-wrapper {
+    margin: 0;
+    padding: 0;
+}
+
+.theme-wrapper {
+    width: 100%;
+    height: 100vh;
+}
+
+.theme-default {
+
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    background-color: mc-color($background, background);
+    color: mc-color($foreground, text);
 
     @include mosaic-theme($theme);
-
     @include app-components-theme($theme);
 }
 
@@ -58,9 +77,36 @@ $dark-warning: mc-palette($mc-yellow, 200, 400, 700);
 
 $dark-theme: mc-dark-theme($dark-primary, $dark-second, $dark-error, $dark-info, $dark-success, $dark-warning);
 
-body.theme-dark {
+.theme-dark {
+
+    $background: map-get($dark-theme, background);
+    $foreground: map-get($dark-theme, foreground);
+
+    background-color: mc-color($background, background);
+    color: mc-color($foreground, text);
 
     @include mosaic-theme($dark-theme);
-
     @include app-components-theme($dark-theme);
+}
+
+// -----------------------------------------------------------------------------------------------------
+// @ Define a green theme
+// -----------------------------------------------------------------------------------------------------
+$green-primary: mc-palette($mc-green, 800, 500, 200);
+$green-second: mc-palette($mc-grey, 200, 400, 700);
+$green-error: mc-palette($mc-green, 200, 400, 700);
+
+$green-info: mc-palette($mc-green, 500, 200, 700);
+$green-success: mc-palette($mc-yellow, 100, 700, 200);
+$green-warning: mc-palette($mc-yellow, 200, 500, 700);
+
+$green-theme: mc-light-theme($green-primary, $green-second, $green-error, $green-info, $green-success, $green-warning);
+
+.theme-green {
+
+    background-color: mc-color($green-primary, 100);
+    color: mc-color($green-primary, 800);
+
+    @include mosaic-theme($green-theme);
+    @include app-components-theme($green-theme);
 }
