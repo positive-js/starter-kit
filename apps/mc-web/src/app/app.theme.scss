@@ -11,7 +11,10 @@ $typography: mc-typography-config(
 
 // Setup the typography
 @include mosaic-typography($typography);
+@include mosaic-visual();
 
+@include cdk-a11y();
+@include cdk-overlay();
 
 // -----------------------------------------------------------------------------------------------------
 // @ Component theming
@@ -20,39 +23,23 @@ $typography: mc-typography-config(
 // Import app and page component themes here to enable theming for them
 // @import 'path/to/component/component-name.theme';
 
-@import './../../../../libs/feature/welcome/src/lib/welcome-table/_welcome-table-theme';
+@import '~libs/feature/welcome/src/lib/welcome-table/_welcome-table-theme';
 
 @mixin app-components-theme($theme) {
      @include welcome-table-theme($theme);
 }
 
-@include mosaic-visual();
-@include cdk-a11y();
-@include cdk-overlay();
-
-// -----------------------------------------------------------------------------------------------------
-// @ Define the default theme
-// -----------------------------------------------------------------------------------------------------
-$primary: mc-palette($mc-blue, 400, 500, 600);
-$second: mc-palette($mc-grey, 100, 300, 400);
-$error: mc-palette($mc-red, 60, 400, 500);
-
-$info: mc-palette($mc-blue, 60, 200, 400);
-$success: mc-palette($mc-green, 60, 200, 400);
-$warning: mc-palette($mc-yellow, 60, 200, 400);
-
-$theme: mc-light-theme($primary, $second, $error, $info, $success, $warning);
-
-body,
-.theme-wrapper {
-    margin: 0;
-    padding: 0;
+@mixin app-components-typography($typography) {
+    // @include welcome-table-typography($typography);
 }
 
-.theme-wrapper {
-    width: 100%;
-    height: 100vh;
-}
+// -----------------------------------------------------------------------------------------------------
+// @ Global App theming
+// -----------------------------------------------------------------------------------------------------
+
+@import '../styles/theme-default';
+@import '../styles/theme-dark';
+@import '../styles/theme-green';
 
 .theme-default {
 
@@ -64,20 +51,8 @@ body,
 
     @include mosaic-theme($theme);
     @include app-components-theme($theme);
+    @include app-components-typography($typography);
 }
-
-// -----------------------------------------------------------------------------------------------------
-// @ Define a dark theme
-// -----------------------------------------------------------------------------------------------------
-$dark-primary: mc-palette($mc-blue, 300, 400, 500);
-$dark-second: mc-palette($mc-grey, 200, 400, 700);
-$dark-error: mc-palette($mc-red, 200, 400, 700);
-
-$dark-info: mc-palette($mc-blue, 200, 400, 700);
-$dark-success: mc-palette($mc-green, 200, 400, 700);
-$dark-warning: mc-palette($mc-yellow, 200, 400, 700);
-
-$dark-theme: mc-dark-theme($dark-primary, $dark-second, $dark-error, $dark-info, $dark-success, $dark-warning);
 
 .theme-dark {
 
@@ -89,55 +64,8 @@ $dark-theme: mc-dark-theme($dark-primary, $dark-second, $dark-error, $dark-info,
 
     @include mosaic-theme($dark-theme);
     @include app-components-theme($dark-theme);
+    @include app-components-typography($typography);
 }
-
-// -----------------------------------------------------------------------------------------------------
-// @ Define a green theme
-// -----------------------------------------------------------------------------------------------------
-
-
-$mc-orange: (
-    40: #fdfaf3,
-    60: #fcf5e8,
-    100: #f8ebd1,
-    200: #f0d49b,
-    300: #e7bd68,
-    400: #dfa739,
-    500: #d6930d,
-    560: #bb800a,
-    600: #aa7408,
-    700: #7d5504,
-    800: #503602,
-    A40: rgba(0, 0, 0, 0.04),
-    A60: rgba(0, 0, 0, 0.06),
-    A100: rgba(0, 0, 0, 0.1),
-    A200: rgba(0, 0, 0, 0.2),
-    A300: rgba(0, 0, 0, 0.3),
-    A500: rgba(0, 0, 0, 0.5),
-    contrast: (
-        40: $dark-text-default,
-        60: $dark-text-default,
-        100: $dark-text-default,
-        200: $dark-text-default,
-        300: $dark-text-default,
-        400: white,
-        500: white,
-        560: white,
-        600: white,
-        700: white,
-        800: white,
-    )
-);
-
-$green-primary: mc-palette($mc-green, 800, 500, 200);
-$green-second: mc-palette($mc-orange, 200, 400, 700);
-$green-error: mc-palette($mc-green, 200, 400, 700);
-
-$green-info: mc-palette($mc-green, 500, 200, 700);
-$green-success: mc-palette($mc-yellow, 100, 700, 200);
-$green-warning: mc-palette($mc-yellow, 200, 500, 700);
-
-$green-theme: mc-light-theme($green-primary, $green-second, $green-error, $green-info, $green-success, $green-warning);
 
 .theme-green {
 
@@ -146,4 +74,5 @@ $green-theme: mc-light-theme($green-primary, $green-second, $green-error, $green
 
     @include mosaic-theme($green-theme);
     @include app-components-theme($green-theme);
+    @include app-components-typography($typography);
 }
