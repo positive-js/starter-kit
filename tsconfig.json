@@ -19,9 +19,12 @@
         ],
         "baseUrl": ".",
         "paths": {
-            "@libs/feature/welcome": [
-                "libs/feature/welcome/src/index.ts"
-            ]
+            "@libs/api-models": ["libs/api-models/src/index.ts"],
+            "@libs/feature/welcome": ["libs/feature/welcome/src/index.ts"],
+            "@libs/store/root": ["libs/store/root/src/index.ts"],
+            "@libs/store/router": ["libs/store/router/src/index.ts"],
+            "@libs/store/users": ["libs/store/users/src/index.ts"],
+            "@libs/store/layout": ["libs/store/layout/src/index.ts"]
         }
     },
     "exclude": [
