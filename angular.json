@@ -123,7 +123,88 @@
                     }
                 }
             }
-        }
+        },
+        "mc-mocks-server": {
+            "root": "apps/mc-mocks-server",
+            "sourceRoot": "apps/mc-cocks-server/src",
+            "projectType": "application",
+            "prefix": "mc-mocks-server",
+            "schematics": {},
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/mc-mocks-server",
+                        "main": "apps/mc-mocks-server/src/main.ts",
+                        "tsConfig": "apps/mc-mocks-server/tsconfig.app.json",
+                        "aot": false
+                    },
+                    "configurations": {
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/mc-mocks-server/src/environments/environment.ts",
+                                    "with": "apps/mc-mocks-server/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "aot": true,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "buildTarget": "mc-mocks-server:build:production"
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "apps/mc-mocks-server/tsconfig.app.json",
+                            "apps/mc-mocks-server/tsconfig.spec.json",
+                            "apps/mc-mocks-server/e2e/tsconfig.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        },
+        "mc-mocks-users": {
+            "root": "libs/mocks/features/users",
+            "sourceRoot": "libs/mocks/features/users/src",
+            "projectType": "library",
+            "prefix": "mc-mocks",
+            "architect": {
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "libs/mocks/features/users/tsconfig.lib.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                }
+            }
+        },
     },
     "defaultProject": "mc-web"
 }

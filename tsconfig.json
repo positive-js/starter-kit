@@ -24,8 +24,13 @@
             "@libs/store/root": ["libs/store/root/src/index.ts"],
             "@libs/store/router": ["libs/store/router/src/index.ts"],
             "@libs/store/users": ["libs/store/users/src/index.ts"],
-            "@libs/store/layout": ["libs/store/layout/src/index.ts"]
-        }
+            "@libs/store/layout": ["libs/store/layout/src/index.ts"],
+            "@libs/mocks/users": ["libs/mocks/features/users/src/index.ts"],
+            "@libs/mocks/entities": ["libs/mocks/repositories/src/index.ts"],
+            "@libs/mocks/dto": ["libs/mocks/dto/src/index.ts"]
+        },
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
     },
     "exclude": [
         "node_modules",

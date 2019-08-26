@@ -1,0 +1,14 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc/apps/mc-mocks-server",
+        "module": "commonjs",
+        "types": [
+            "node"
+        ]
+    },
+    "include": [
+        "**/*.spec.ts",
+        "**/*.d.ts"
+    ]
+}

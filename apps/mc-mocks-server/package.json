@@ -1,0 +1,11 @@
+{
+    "name": "@mc/mocks-server",
+    "version": "0.0.0-PLACEHOLDER",
+    "description": "MC Mocks Server",
+    "keywords": [
+        "angular",
+        "nest",
+        "ptsecurity"
+    ],
+    "sideEffects": false
+}
