@@ -126,7 +126,7 @@
         },
         "mc-mocks-server": {
             "root": "apps/mc-mocks-server",
-            "sourceRoot": "apps/mc-cocks-server/src",
+            "sourceRoot": "apps/mc-mocks-server/src",
             "projectType": "application",
             "prefix": "mc-mocks-server",
             "schematics": {},
@@ -176,8 +176,7 @@
                     "options": {
                         "tsConfig": [
                             "apps/mc-mocks-server/tsconfig.app.json",
-                            "apps/mc-mocks-server/tsconfig.spec.json",
-                            "apps/mc-mocks-server/e2e/tsconfig.json"
+                            "apps/mc-mocks-server/tsconfig.spec.json"
                         ],
                         "exclude": [
                             "**/node_modules/**"
