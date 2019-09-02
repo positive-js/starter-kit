@@ -5,7 +5,7 @@ import { User } from '@libs/mocks/entities';
 import { Repository } from 'typeorm';
 
 @Injectable()
-export class UsersAPIService {
+export class UsersService {
 
     constructor(@InjectRepository(User) private readonly userRepository: Repository<User>) {}
 
