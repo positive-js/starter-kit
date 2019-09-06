@@ -13,6 +13,8 @@ import {
 import { WelcomeRoutingModule } from './welcome-routing.module';
 import { WelcomeTableComponent } from './welcome-table/welcome-table.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { TestService } from './welcome/test.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,6 +24,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
     ],
     imports: [
         CommonModule,
+        HttpClientModule,
         WelcomeRoutingModule,
         McInputModule,
         McFormFieldModule,
@@ -30,7 +33,8 @@ import { WelcomeComponent } from './welcome/welcome.component';
         McButtonModule,
         McModalModule,
         FormsModule
-    ]
+    ],
+    providers: [TestService]
 })
 export class WelcomeModule {
 }

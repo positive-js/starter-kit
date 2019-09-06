@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "target": "esnext",
+        "outDir": "../../dist/out-tsc/apps/mc-mocks-server",
+        "types": [
+            "node"
+        ]
+    },
+    "exclude": [
+        "**/*.spec.ts"
+    ],
+    "include": [
+        "**/*.ts"
+    ]
+}
