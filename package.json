@@ -82,7 +82,7 @@
         "karma-jasmine": "~2.0.1",
         "karma-jasmine-html-reporter": "^1.4.0",
         "ngrx-store-freeze": "^0.2.4",
-        "node-sass": "^4.11.0",
+        "node-sass": "^4.13.1",
         "node-sass-tilde-importer": "^1.0.2",
         "nodemon": "^1.18.9",
         "protractor": "~5.4.0",
