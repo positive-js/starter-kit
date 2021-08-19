@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 
+
 @Component({
     selector: 'welcome-table',
     templateUrl: './welcome-table.component.html',

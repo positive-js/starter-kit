@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StateLayoutModule } from '@libs/store/layout';
 import { StoreRootModule } from '@libs/store/root';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { McNavbarModule } from '@ptsecurity/mosaic';
+import { McNavbarModule } from '@ptsecurity/mosaic/navbar';
 
 import { environment } from '../environments/environment';
 

@@ -1,0 +1,7 @@
+@import '~@ptsecurity/mosaic/theming';
+
+@import './tokens';
+
+
+$default-light-theme: mc-light-theme();
+$default-dark-theme: mc-dark-theme();

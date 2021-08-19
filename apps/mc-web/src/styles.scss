@@ -1,17 +1,34 @@
-@import '~@ptsecurity/mosaic/visual';
+@import './styles/variables';
+@import './styles/fonts';
+
+@import '~@ptsecurity/mosaic/visual.scss';
 @import '~@ptsecurity/mosaic-icons/dist/styles/mc-icons.css';
 
-@import 'styles/font';
+@include mosaic-visual();
 
-@import 'app/app.theme';
+@import './styles/common';
+@import './styles/default-theme/theme';
 
-body,
-.theme-wrapper {
-    margin: 0;
-    padding: 0;
+$typography: mc-typography-config();
+
+// Include all typography for the components.
+@include mc-core($typography);
+
+@mixin app-theme($theme) {
+
+    $background: map-get($theme, background);
+    $foreground: map-get($theme, foreground);
+
+    background: mc-color($background, background);
+    color: mc-color($foreground, text);
+
+    @include mosaic-theme($theme);
 }
 
-.theme-wrapper {
-    width: 100%;
-    height: 100vh;
+.theme-default {
+    &.active-blue {
+
+        // Include all theme styles for the mosaic components.
+        @include app-theme($default-light-theme);
+    }
 }
