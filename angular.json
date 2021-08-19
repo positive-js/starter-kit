@@ -185,7 +185,7 @@
                     }
                 }
             }
-        },
+        }
     },
     "defaultProject": "mc-web"
 }

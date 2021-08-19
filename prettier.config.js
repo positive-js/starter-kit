@@ -9,7 +9,7 @@ module.exports = {
             // Add angular specific parser for all our angular templates
             files: [
                 'libs/**/*.html',
-                'apps/{pt-nad,pt-nad-e2e}/**/*.html',
+                'apps/{mc-web}/**/*.html',
             ],
             options: { parser: 'angular' },
         }
