@@ -1,0 +1,63 @@
+<div class="container">
+
+    <h1 class="mc-display-1">Hello PT team!</h1>
+
+    <div class="layout-row block">
+        <div class="flex layout-column block">
+            <div class="flex block">
+                <div class="mb-1">
+                    <mc-form-field>
+                        <input mcInput [placeholder]="'Start typing'">
+                    </mc-form-field>
+                </div>
+
+
+                <div class="mb-1">
+                    <mc-form-field>
+                        <input mcInput [disabled]="true" [placeholder]="'Start typing'">
+                    </mc-form-field>
+                </div>
+                <div class="mb-1">
+                    <mc-form-field>
+                        <input mcInput [placeholder]="'Start typing'" [required]="true">
+                    </mc-form-field>
+                </div>
+            </div>
+            <div class="flex block">
+                <div class="mb-1">
+                    <button mc-button color="primary">primary</button>
+                    &nbsp;
+                    <button mc-button color="second">second</button>
+                </div>
+
+                <div>
+                    <mc-toggle [checked]="true">
+                        Some text
+                    </mc-toggle>
+                </div>
+
+                <button mc-button (click)="showConfirm()" style="margin-top: 18px;">Modal Confirm</button>
+            </div>
+        </div>
+
+        <div class="flex block ml-2">
+            <div class="mc-alert mb-1 mc-alert_error mc-alert_dismissible">
+                <i class="mc mc-icon mc-info_16 mc-alert__icon"></i> Alert text error
+            </div>
+            <div class="mc-alert mb-1 mc-alert_warning mc-alert_dismissible">
+                <i class="mc mc-icon mc-info_16 mc-alert__icon"></i> Alert text warning
+            </div>
+            <div class="mc-alert mb-1 mc-alert_success mc-alert_dismissible">
+                <i class="mc mc-icon mc-info_16 mc-alert__icon"></i> Alert text success
+            </div>
+            <div class="mc-alert mb-1 mc-alert_info mc-alert_dismissible">
+                <i class="mc mc-icon mc-info_16 mc-alert__icon"></i> Alert text info
+            </div>
+            <div class="mc-alert mb-1 mc-alert_default mc-alert_dismissible">
+                <i class="mc mc-icon mc-info_16 mc-alert__icon"></i> Alert text default
+            </div>
+        </div>
+
+    </div>
+
+</div>

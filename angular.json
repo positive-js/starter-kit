@@ -25,8 +25,9 @@
                         "aot": false,
                         "assets": [
                             "apps/mc-web/src/favicon.ico",
+                            "apps/mc-web/src/assets",
                             {
-                                "glob": "**/+(common|errors).json",
+                                "glob": "**/*",
                                 "input": "./libs/i18n-resources",
                                 "output": "./assets/i18n"
                             }
@@ -97,25 +98,6 @@
                             "apps/mc-web/tsconfig.app.json",
                             "apps/mc-web/tsconfig.spec.json",
                             "apps/mc-web/e2e/tsconfig.json"
-                        ],
-                        "exclude": [
-                            "**/node_modules/**"
-                        ]
-                    }
-                }
-            }
-        },
-        "welcome": {
-            "root": "libs/feature/welcome",
-            "sourceRoot": "libs/feature/welcome/src",
-            "projectType": "library",
-            "prefix": "mc-web",
-            "architect": {
-                "lint": {
-                    "builder": "@angular-devkit/build-angular:tslint",
-                    "options": {
-                        "tsConfig": [
-                            "libs/feature/welcome/tsconfig.lib.json"
                         ],
                         "exclude": [
                             "**/node_modules/**"

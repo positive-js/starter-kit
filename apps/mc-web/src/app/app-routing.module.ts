@@ -10,8 +10,8 @@ const routes: Routes = [
     },
     {
         path: 'welcome',
-        loadChildren: () => import('@libs/feature/welcome').then(m => m.WelcomeModule)
-    },
+        loadChildren: () => import('@mc-web/welcome/shell').then(m => m.ManagementShellModule)
+    }
 ];
 
 
