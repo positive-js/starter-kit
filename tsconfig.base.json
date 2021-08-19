@@ -1,23 +1,23 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+        "baseUrl": ".",
+        "rootDir": ".",
+        "target": "es2015",
+        "lib": ["dom", "es2018"],
+        "typeRoots": ["node_modules/@types"],
         "sourceMap": true,
         "declaration": false,
-        "module": "esnext",
-        "moduleResolution": "node",
-        "emitDecoratorMetadata": true,
+        "downlevelIteration": true,
         "experimentalDecorators": true,
+        "module": "es2020",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "emitDecoratorMetadata": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
         "resolveJsonModule": true,
         "esModuleInterop": true,
-        "target": "es5",
-        "typeRoots": [
-            "node_modules/@types"
-        ],
-        "lib": [
-            "es2017",
-            "dom"
-        ],
-        "baseUrl": ".",
         "paths": {
             "@libs/api-models": ["libs/api-models/src/index.ts"],
             "@libs/feature/welcome": ["libs/feature/welcome/src/index.ts"],
@@ -28,12 +28,11 @@
             "@libs/mocks/users": ["libs/mocks/features/users/src/index.ts"],
             "@libs/mocks/entities": ["libs/mocks/repositories/src/index.ts"],
             "@libs/mocks/dto": ["libs/mocks/dto/src/index.ts"]
-        },
-        "skipLibCheck": true,
-        "skipDefaultLibCheck": true,
+        }
     },
-    "exclude": [
-        "node_modules",
-        "tmp"
-    ]
+    "exclude": ["node_modules", "tmp"],
+    "angularCompilerOptions": {
+        "fullTemplateTypeCheck": true,
+        "strictInjectionParameters": true
+    }
 }

@@ -2,8 +2,12 @@
 [![dependency status][david-img]][david-url]
 
 # Angular Starter [![The MIT License][license-img]][license-url] 
-Angular starter project
 
+# Generate Containers
+
+```bash
+nx g component containers/license  --project=management-feature-control-center
+```
 
 
 [david-url]: https://david-dm.org/positive-js/angular-starter

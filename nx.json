@@ -1,0 +1,19 @@
+{
+    "npmScope": "pt-starter",
+    "affected": {
+        "defaultBase": "master"
+    },
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": "*",
+        "tslint.json": "*",
+        "nx.json": "*",
+        "tsconfig.base.json": "*",
+        ".eslintrc.json": "*"
+    },
+    "projects": {
+        "mc-web": {
+            "tags": ["domain:app", "type:app"]
+        }
+    }
+}
