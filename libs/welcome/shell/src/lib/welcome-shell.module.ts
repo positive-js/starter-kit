@@ -7,7 +7,7 @@ const routes: Routes = [
     {
         path: '',
         loadChildren: () =>
-            import('@mc-web/welcome/feature-welcome').then(
+            import('@pt-starter/welcome/feature-welcome').then(
                 (m) => m.WelcomeFeatureWelcomeModule
             )
     }

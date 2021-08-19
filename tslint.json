@@ -1,9 +1,0 @@
-{
-    "extends": ["@ptsecurity/tslint-config"],
-    "rules": {
-        "no-implicit-dependencies": false,
-        "no-reserved-keywords": false,
-
-        "no-object-literal-type-assertion": false
-    }
-}

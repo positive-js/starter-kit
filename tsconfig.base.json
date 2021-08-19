@@ -4,8 +4,13 @@
         "baseUrl": ".",
         "rootDir": ".",
         "target": "es2015",
-        "lib": ["dom", "es2018"],
-        "typeRoots": ["node_modules/@types"],
+        "lib": [
+            "dom",
+            "es2018"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
         "sourceMap": true,
         "declaration": false,
         "downlevelIteration": true,
@@ -19,15 +24,30 @@
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "paths": {
-            "@libs/api-models": ["libs/api-models/src/index.ts"],
-            "@mc-web/welcome/feature-welcome": ["libs/welcome/feature-welcome/src/index.ts"],
-            "@mc-web/welcome/shell": ["libs/welcome/shell/src/index.ts"],
-            "@libs/mocks/users": ["libs/mocks/features/users/src/index.ts"],
-            "@libs/mocks/entities": ["libs/mocks/repositories/src/index.ts"],
-            "@libs/mocks/dto": ["libs/mocks/dto/src/index.ts"]
+            "@libs/api-models": [
+                "libs/api-models/src/index.ts"
+            ],
+            "@pt-starter/welcome/feature-welcome": [
+                "libs/welcome/feature-welcome/src/index.ts"
+            ],
+            "@pt-starter/welcome/shell": [
+                "libs/welcome/shell/src/index.ts"
+            ],
+            "@libs/mocks/users": [
+                "libs/mocks/features/users/src/index.ts"
+            ],
+            "@libs/mocks/entities": [
+                "libs/mocks/repositories/src/index.ts"
+            ],
+            "@libs/mocks/dto": [
+                "libs/mocks/dto/src/index.ts"
+            ]
         }
     },
-    "exclude": ["node_modules", "tmp"],
+    "exclude": [
+        "node_modules",
+        "tmp"
+    ],
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,
         "strictInjectionParameters": true

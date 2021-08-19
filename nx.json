@@ -11,9 +11,25 @@
         "tsconfig.base.json": "*",
         ".eslintrc.json": "*"
     },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/workspace/tasks-runners/default",
+            "options": {
+                "cacheableOperations": [
+                    "build",
+                    "lint",
+                    "test",
+                    "e2e"
+                ]
+            }
+        }
+    },
     "projects": {
         "mc-web": {
-            "tags": ["domain:app", "type:app"]
+            "tags": [
+                "domain:app",
+                "type:app"
+            ]
         }
     }
 }
