@@ -183,6 +183,31 @@
                     }
                 }
             }
+        },
+        "shared-util-models": {
+            "projectType": "library",
+            "root": "libs/shared/util-models",
+            "sourceRoot": "libs/shared/util-models/src",
+            "prefix": "pt-starter",
+            "architect": {
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "libs/shared/util-models/src/**/*.ts",
+                            "libs/shared/util-models/src/**/*.html"
+                        ]
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "libs/shared/util-models/src/test.ts",
+                        "tsConfig": "libs/shared/util-models/tsconfig.spec.json",
+                        "karmaConfig": "libs/shared/util-models/karma.conf.js"
+                    }
+                }
+            }
         }
     },
     "cli": {

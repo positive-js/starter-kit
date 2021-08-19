@@ -41,6 +41,9 @@
             ],
             "@libs/mocks/dto": [
                 "libs/mocks/dto/src/index.ts"
+            ],
+            "@pt-starter/shared/util-models": [
+                "libs/shared/util-models/src/index.ts"
             ]
         }
     },
